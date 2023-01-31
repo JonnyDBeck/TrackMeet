@@ -32,5 +32,59 @@ const Signup = () => {
             password: '',
         });
     };
+
+    return (
+        <>
+          <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+            <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
+              There was an error with your signup!
+            </Alert>
     
-}
+            <Form.Group>
+              <Form.Label htmlFor='username'>Username</Form.Label>
+              <Form.Control
+                type='text'
+                placeholder='Username'
+                name='username'
+                onChange={handleInputChange}
+                value={userFormData.username}
+                required
+              />
+              <Form.Control.Feedback type='invalid'>Username required!</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label htmlFor='email'>Email</Form.Label>
+              <Form.Control
+                type='email'
+                placeholder='Email address'
+                name='email'
+                onChange={handleInputChange}
+                value={userFormData.email}
+                required
+              />
+              <Form.Control.Feedback type='invalid'>Email required!</Form.Control.Feedback>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label htmlFor='password'>Password</Form.Label>
+              <Form.Control
+                type='password'
+                placeholder='Password'
+                name='password'
+                onChange={handleInputChange}
+                value={userFormData.password}
+                required
+              />
+              <Form.Control.Feedback type='invalid'>Password required!</Form.Control.Feedback>
+            </Form.Group>
+            <Button
+              disabled={!(userFormData.username && userFormData.email && userFormData.password)}
+              type='submit'
+              variant='success'>
+              Submit
+            </Button>
+          </Form>
+        </>
+      );
+    };
+    
+    export default SignupForm;
