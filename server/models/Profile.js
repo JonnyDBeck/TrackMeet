@@ -11,6 +11,10 @@ const profileSchema = new Schema (
             type: String,
             required: true
         },
+        email: {
+            type: String,
+            required: true
+        },
         tracks: {
             type: [Track],
             required: false
