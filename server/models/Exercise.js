@@ -6,11 +6,15 @@ const exerciseSchema = new Schema (
             type: String,
             required: true
         },
-        calpermin: {
+        calper: {
             type: Number,
             required: true
         },
-        Tags: {
+        measure: {
+            type: String,
+            required: true
+        },
+        tags: {
             type: [String],
             required: false
         }

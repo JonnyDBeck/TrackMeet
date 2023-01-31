@@ -1,11 +1,12 @@
 const db = require('../config/connection')
+const { Profile, Track, Exercise} = require('../models')
 
-//import modles
+const exerciseData = require('./ExerciseData.json')
 
 db.once("open", async ()=>{
-    //delete all instaces of models
+    await Exercise.deleteMany({});
 
-    //readd instances
+    await Exercise.insertMany(exerciseData);
 
-    console.log("Data Seeded (But not actually)")
+    console.log("Data Seeded")
 })
