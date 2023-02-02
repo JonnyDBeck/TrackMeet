@@ -3,6 +3,10 @@ const Exercise = require('./Exercise').schema;
 
 const trackSchema = new Schema (
     {
+        profile: {
+            type: Profile,
+            required: true
+        },
         exercise: {
             type: Exercise,
             required: true
@@ -22,4 +26,4 @@ const trackSchema = new Schema (
 
 const Track = model("Track", trackSchema)
 
-module.exports = Track
+module.exports = Track;
