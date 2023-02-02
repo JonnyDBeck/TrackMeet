@@ -1,7 +1,7 @@
 const db = require('../config/connection')
 const { Profile, Track, Exercise} = require('../models')
 
-const exerciseData = require('./ExerciseData.json')
+const exerciseData = require('./exerciseData.json')
 
 db.once("open", async ()=>{
     await Exercise.deleteMany({});
