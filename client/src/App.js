@@ -1,13 +1,14 @@
 import React from "react";
 import Navbar from "./components/Navbar";
-import Cardio from "./components/Cardio";
+import Workout from "./components/Workout";
 
 export default function App() {
   return (
-    <main>
+    <main class ="flex">
       <Navbar />
-      <Cardio />
-    </main>
+      <Workout />
+       </main>
+    
    
   );
 }
