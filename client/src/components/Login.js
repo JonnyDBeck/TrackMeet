@@ -50,7 +50,6 @@ const Login = () => {
               />
               <Form.Control.Feedback type='invalid'>Email required!</Form.Control.Feedback>
             </Form.Group>
-    
             <Form.Group>
               <Form.Label htmlFor='password'>Password</Form.Label>
               <Form.Control
