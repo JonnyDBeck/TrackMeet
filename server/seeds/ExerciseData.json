@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Pushups",
+        "calper": 0.32,
+        "measure": "Rep",
+        "tags":[
+            "Triceps", "Pectoral", "Shoulder", "UpperBody",
+            "No Machine"
+        ]
+    },
+    {
+        "name": "Situps",
+        "calper": 0.28,
+        "measure": "Rep",
+        "tags":[
+            "Rectus Abdominis", "Tansverse Abdomninis", "Obliques", "Abdominal",
+            "No Machine"
+        ]
+    },
+    {
+        "name": "Squats",
+        "calper": 0.32,
+        "measure": "Rep",
+        "tags":[
+            "Thighs", "Calves", "Legs", "Quadriceps",
+            "Hamstrings", "No Machine"
+        ]
+    },
+    {
+        "name": "Jogging",
+        "calper": 100,
+        "measure": "Mile",
+        "tags":[
+            "Thighs", "Calves", "Legs", "Quadriceps",
+            "hamstrings", "Gluteals", "No Machine"
+        ]
+    }
+]
