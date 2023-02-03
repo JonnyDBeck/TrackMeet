@@ -5,8 +5,9 @@ const { GraphQLScalarType } = require('graphql');
 
 const resolvers = {
     Query: {
-        getAllExercise: async () => {
+        getAllExercises: async () => {
             const result = await Exercise.find({});
+            console.log(result);
             return result;
         },
         getAllTracks: async () => {
