@@ -7,7 +7,6 @@ const resolvers = {
     Query: {
         getAllExercises: async () => {
             const result = await Exercise.find({});
-            console.log(result);
             return result;
         },
         getAllTracks: async () => {

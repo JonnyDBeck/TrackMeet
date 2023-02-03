@@ -9,40 +9,46 @@ const typeDefs = gql`
     }
 
     type Exercise {
-        _id: ID,
-        name: String,
-        calper: Float,
-        measure: String,
+        _id: ID
+        name: String
+        calper: Float
+        measure: String
         tags: [String]
     }
 
     type Track {
-        _id: ID,
-        exercise: Exercise,
-        time: Date,
+        _id: ID
+        exercise: Exercise
+        time: Date
         amount: Float
     }
 
     type Profile {
-        _id: ID,
-        username: String,
-        password: String,
-        email: String,
+        _id: ID
+        username: String
+        password: String
+        email: String
         tracks: [Track]
     }
 
+    type Auth {
+        token: ID
+        user: Profile
+    }
+
     type Query {
-        getAllExercises: [Exercise],
-        getAllTracks: [Track],
-        getAllProfiles: [Profile],
-        getProfileByUsername(username: String!): Profile,
-        getProfileByEmail(email: String!): Profile,
+        getAllExercises: [Exercise]
+        getAllTracks: [Track]
+        getAllProfiles: [Profile]
+        getProfileByUsername(username: String!): Profile
+        getProfileByEmail(email: String!): Profile
         getExerciseByName(name: String!): Exercise
     }
 
     type Mutation {
-        addProfile(username: String!, password: String!, email: String!): Profile,
+        addProfile(username: String!, password: String!, email: String!): Profile
         addTrack(profileUsername: String!, exerciseName: String!, time: Date!, amount: Float!): Track
+        login(email: String!, password: String!): Auth
     }
 `
 
