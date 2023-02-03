@@ -18,10 +18,6 @@ const profileSchema = new Schema (
         tracks: {
             type: [Track],
             required: false
-        },
-        friends: {
-            type: [Profile],
-            required: false
         }
     }
 )

@@ -2,8 +2,11 @@ const {gql} = require('apollo-server-express');
 
 //placeholder is holding the place of future models
 const typeDefs = gql`
-
     scalar Date
+
+    type MyType {
+        created: Date
+    }
 
     type Exercise {
         _id: ID,
@@ -15,7 +18,6 @@ const typeDefs = gql`
 
     type Track {
         _id: ID,
-        profile: Profile,
         exercise: Exercise,
         time: Date,
         amount: Float
@@ -26,21 +28,21 @@ const typeDefs = gql`
         username: String,
         password: String,
         email: String,
-        tracks: [Track],
-        freinds: [Profile]
+        tracks: [Track]
     }
 
     type Query {
         getAllExercises: [Exercise],
         getAllTracks: [Track],
         getAllProfiles: [Profile],
-        getProfile(username: String!): Profile,
-        getTrack(name: String!): Exercise,
+        getProfileByUsername(username: String!): Profile,
+        getProfileByEmail(email: String!): Profile,
+        getExerciseByName(name: String!): Exercise
     }
 
     type Mutation {
         addProfile(username: String!, password: String!, email: String!): Profile,
-        addTrack(profile: Profile!, exercise: Exercise!, time: Date!, amount: Float!): Track
+        addTrack(profileUsername: String!, exerciseName: String!, time: Date!, amount: Float!): Track
     }
 `
 

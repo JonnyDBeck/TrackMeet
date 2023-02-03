@@ -1,12 +1,9 @@
 const { Schema, model } = require('mongoose')
 const Exercise = require('./Exercise').schema;
+const Profile = require('./Profile').schema;
 
 const trackSchema = new Schema (
     {
-        profile: {
-            type: Profile,
-            required: true
-        },
         exercise: {
             type: Exercise,
             required: true
