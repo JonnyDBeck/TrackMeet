@@ -5,6 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+       "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "build": "cd client && npm run build",
+    "seed": "cd derver && bpm run seed"
   },
   "repository": {
     "type": "git",
@@ -17,4 +22,7 @@
     "url": "https://github.com/JonnyDBeck/TrackMeet/issues"
   },
   "homepage": "https://github.com/JonnyDBeck/TrackMeet#readme"
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
 }
