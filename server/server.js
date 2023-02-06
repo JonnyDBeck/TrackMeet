@@ -4,6 +4,9 @@ const { ApolloServer } = require("apollo-server-express");
 const {typeDefs, resolvers} = require("./schema");
 const db = require("./config/connection");
 const { authMiddleware } = require("./utils/auth")
+const workoutRoutes = require("./routes/workouts");
+const userRoutes = require("./routes/user");
+const path = require("path");
 
 
 const PORT = process.env.PORT || 3001;
@@ -13,6 +16,9 @@ const server = new ApolloServer({
 });
 
 const app = express();
+
+app.use("/api/workouts", workoutRoutes);
+app.use("/api/user", userRoutes);
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
