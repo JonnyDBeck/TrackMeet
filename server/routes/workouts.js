@@ -3,6 +3,7 @@ const {
   getWorkouts,
   getWorkout,
   deleteWorkout,
+  createWorkout,
 } = require("../controllers/workoutController");
 
 
@@ -15,5 +16,10 @@ router.get("/", getWorkouts);
 router.get("/:id", getWorkout);
 
 
+// POST a new workout
+router.post("/", createWorkout);
+
 // DELETE a workout
 router.delete("/:id", deleteWorkout);
+
+module.exports = router;
