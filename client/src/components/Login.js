@@ -34,7 +34,7 @@ const Login = () => {
 
     return (
         <>
-          <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+          <Form noValidate validated={validated} onSubmit={submitForm}>
             <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
               There was an error with your login!
             </Alert>
@@ -44,7 +44,7 @@ const Login = () => {
                 type='text'
                 placeholder='Email'
                 name='email'
-                onChange={handleInputChange}
+                onChange={inputChange}
                 value={userFormData.email}
                 required
               />
@@ -56,7 +56,7 @@ const Login = () => {
                 type='password'
                 placeholder='Password'
                 name='password'
-                onChange={handleInputChange}
+                onChange={inputChange}
                 value={userFormData.password}
                 required
               />
@@ -73,4 +73,4 @@ const Login = () => {
       );
     };
     
-    export default LoginForm;
+    export default Login;
