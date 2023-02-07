@@ -3,7 +3,7 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useAuthContext } from "../hooks/useAuthContext";
 
-const workoutDetails = ({ workout }) => {
+const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext();
   const { user } = useAuthContext();
 
@@ -44,4 +44,4 @@ const workoutDetails = ({ workout }) => {
   );
 };
 
-export default workoutDetails;
+export default WorkoutDetails;

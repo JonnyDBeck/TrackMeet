@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { useLogin } from "../hooks/useLogin";
+// import { useLogin } from "../hooks/useLogin";
+import { useMutation } from "@apollo/client";
+import { LOGIN } from "../utils/mutations";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, error, isLoading } = useLogin();
+  // const { login, error, isLoading } = useLogin();
+  const [{LOGIN}, isLoading, {error}] = useMutation(LOGIN);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
