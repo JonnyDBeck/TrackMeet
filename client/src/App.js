@@ -6,29 +6,28 @@ import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 
-// import { setContext } from "@apollo/client/link/context";
-// import { ApolloProvider } from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
+import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 
+const httpLink = createHttpLink({
+   uri: '/graphql',
+})
 
-// const httpLink = createHttpLink({
-//   uri: '/graphql',
-// })
+const authLink = setContext((_req, { header }) => {
+   const token = localStorage.getItem("id_token")
+   return { headers: { ...header, authorization: token ? `Bearer ${token}` : "" } }
+})
 
-// const authLink = setContext((_req, { header }) => {
-//   const token = localStorage.getItem("id_token")
-//   return { headers: { ...header, authorization: token ? `Bearer ${token}` : "" } }
-// })
-
-// const client = new ApolloClient({
-//   link: authLink.concat(httpLink),
-//   cache: new InMemoryCache()
-// });
+ const client = new ApolloClient({
+   link: authLink.concat(httpLink),
+   cache: new InMemoryCache()
+});
 
 
 function App() {
 
   return (
-    // <ApolloProvider client={client}>
+    <ApolloProvider client={client}>
     <div className="App">
       <BrowserRouter>
         <Navbar />
@@ -50,17 +49,11 @@ function App() {
         </div>
       </BrowserRouter>
     </div>
-    //  </ApolloProvider>
+    </ApolloProvider>
   );
 }
 
 export default App;
-
-
-// const client = new ApolloClient({
-//   link: authLink.concat(httpLink),
-//   cache: new InMemoryCache()
-// })
 
 // export default function App() {
 //   return (
