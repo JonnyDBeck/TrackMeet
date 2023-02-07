@@ -39,11 +39,13 @@ const Signup = () => {
       <label>Email:</label>
       <input
         name="email"
+        type="email"
         onChange={setSearchParam}
       />
       <label>Password:</label>
       <input
         name="password"
+        type="password"
         onChange={setSearchParam}
       />
 
