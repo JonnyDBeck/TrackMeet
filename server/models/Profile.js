@@ -74,9 +74,6 @@ profileSchema.statics.login = async function (email, password) {
     return user;
   };
   
-  module.exports = mongoose.model("Profile", profileSchema);
-  
+const Proflie = model("Profile", profileSchema)
 
-// const Proflie = model("Profile", profileSchema)
-
-// module.exports = Proflie
+module.exports = Proflie;
