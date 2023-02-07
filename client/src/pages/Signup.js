@@ -1,37 +1,56 @@
-import { useState } from "react";
-import { useSignup } from "../hooks/useSignup";
+import React,  { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { ADD_PROFILE } from "../utils/mutations";
 
 const Signup = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const { signup, error, isLoading } = useSignup();
+  const [newObject, setNewObject] = useState({});
+
+  const [addProfile, {error}] = useMutation(ADD_PROFILE);
+
+  const setSearchParam = (e) => {
+    setNewObject({...newObject, [e.target.name]: e.target.value})
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await signup(email, password);
+    try {
+      const { data } = await addProfile({
+        variables: { ...newObject }
+      });
+
+      window.location.href = '/Login'
+      console.log(data)
+    } catch(err) {
+      console.error(err);
+    }
   };
 
   return (
+    <>
     <form className="signup" onSubmit={handleSubmit}>
       <h3>Sign Up</h3>
 
+      <label>Username:</label>
+      <input
+        name="username"
+        onChange={setSearchParam}
+      />
       <label>Email:</label>
       <input
-        type="email"
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
+        name="email"
+        onChange={setSearchParam}
       />
       <label>Password:</label>
       <input
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
+        name="password"
+        onChange={setSearchParam}
       />
 
-      <button disabled={isLoading}>Sign up</button>
+      <button>Sign up</button>
       {error && <div className="error">{error}</div>}
     </form>
+    </>
   );
 };
 
