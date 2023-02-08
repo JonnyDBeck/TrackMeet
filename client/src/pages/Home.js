@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
-// import WorkoutDetails from "../components/WorkoutDetails";
+import WorkoutDetails from "../components/WorkoutDetails";
 import WorkoutForm from "../components/WorkoutForm";
 import { useAuthContext } from "../hooks/useAuthContext";
 
 const Home = () => {
   const { 
-    // workouts,
+    workouts,
      dispatch } = useWorkoutsContext();
   const { user } = useAuthContext();
 
@@ -30,11 +30,11 @@ const Home = () => {
   return (
     <div className="home">
       <div className="workouts">
-        {/* {workouts &&
+        {workouts &&
           workouts.map((workout) => (
             <WorkoutDetails workout={workout} key={workout._id} 
             />
-          ))} */}
+          ))}
       </div>
       <WorkoutForm />
     </div>

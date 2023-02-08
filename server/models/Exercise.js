@@ -17,7 +17,11 @@ const exerciseSchema = new Schema (
         tags: {
             type: [String],
             required: false
-        }
+        },
+        id: {
+            type: String,
+            required: true,
+        },
     }
 )
 

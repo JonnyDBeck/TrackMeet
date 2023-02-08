@@ -1,6 +1,6 @@
 import "./App.css";
 import "./index.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
@@ -8,6 +8,7 @@ import Signup from "./pages/Signup";
 
 import { setContext } from "@apollo/client/link/context";
 import { ApolloProvider, ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
+import { useAuthContext } from "./hooks/useAuthContext";
 
 const httpLink = createHttpLink({
    uri: '/graphql',
@@ -25,6 +26,7 @@ const authLink = setContext((_req, { header }) => {
 
 
 function App() {
+  const { user } = useAuthContext();
 
   return (
     <ApolloProvider client={client}>
@@ -35,15 +37,15 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<Home />}
+              element={user ? <Home /> : <Navigate to="/login" />}
             />
             <Route
               path="/login"
-              element={<Login /> }
+              element={!user ? <Login /> : <Navigate to="/" />}
             />
             <Route
               path="/signup"
-              element={<Signup />}
+              element={!user ? <Signup /> : <Navigate to="/" />}
             />
           </Routes>
         </div>
