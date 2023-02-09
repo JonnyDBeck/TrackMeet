@@ -31,7 +31,7 @@ const WorkoutDetails = ({ workout }) => {
         {workout.calories}
       </p>
       <p>
-        <strong>Time: </strong>
+        <strong>Duration: </strong>
         {workout.time}
       </p>
       <p>

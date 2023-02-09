@@ -6,7 +6,7 @@ const WorkoutForm = () => {
   const { dispatch } = useWorkoutsContext();
   const { user } = useAuthContext();
 
-  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
   const [calories, setCalories] = useState("");
   const [time, setTime] = useState("");
   const [error, setError] = useState(null);
@@ -19,17 +19,19 @@ const WorkoutForm = () => {
       setError("You must be logged in");
       return;
     }
-
-    const workout = { name, calories, time };
+    const workout = { title, calories, time };
 
     const response = await fetch("/api/workouts", {
       method: "POST",
       body: JSON.stringify(workout),
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${user.token}
+        `,
       },
     });
+    // const response = await fetch("/api/workouts");
+
     const json = await response.json();
 
     if (!response.ok) {
@@ -39,7 +41,7 @@ const WorkoutForm = () => {
     if (response.ok) {
       // setEmptyFields([]);
       setError(null);
-      setName("");
+      setTitle("");
       setCalories("");
       setTime("");
       dispatch({ type: "CREATE_WORKOUT", payload: json });
@@ -51,15 +53,15 @@ const WorkoutForm = () => {
     <form className="create" onSubmit={handleSubmit}>
       <h3>Add a New Workout</h3>
 
-      <label>Exercise:</label>
+      <label>Exercise</label>
       <input
         type="text"
-        onChange={(e) => setName(e.target.value)}
-        value={name}
-        className={emptyFields.includes("name") ? "error" : ""}
+        onChange={(e) => setTitle(e.target.value)}
+        value={title}
+        className={emptyFields.includes("title") ? "error" : ""}
       />
 
-      <label>Calories(hr):</label>
+      <label>Calories:</label>
       <input
         type="number"
         onChange={(e) => setCalories(e.target.value)}

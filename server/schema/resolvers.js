@@ -31,6 +31,7 @@ const resolvers = {
         }
     },
     Mutation: {
+
         addProfile: async(parent, args) => {
             const profile = await Profile.create(args);
             const token = signToken(profile);
@@ -51,6 +52,7 @@ const resolvers = {
 
             return { track, profile };
         },
+        
         login: async(parent, { email, password }) => {
             const profile = await Profile.findOne({ email });
 
@@ -68,6 +70,7 @@ const resolvers = {
             return { token, profile };
         }
     },
+    
     Date: new GraphQLScalarType({
         name: 'Date',
         description: 'Date Type for use between mongoose and gql',

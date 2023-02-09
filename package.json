@@ -22,7 +22,11 @@
     "url": "https://github.com/JonnyDBeck/TrackMeet/issues"
   },
   "homepage": "https://github.com/JonnyDBeck/TrackMeet#readme",
-    "devDependencies": {
+  "devDependencies": {
     "concurrently": "^7.6.0"
+  },
+  "dependencies": {
+    "react-query": "^3.39.3",
+    "react-redux": "^8.0.5"
   }
 }
