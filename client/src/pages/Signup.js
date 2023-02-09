@@ -1,11 +1,11 @@
 import React,  { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { ADD_PROFILE } from "../utils/mutations";
+import { ADD_USER } from "../utils/mutations";
 
 const Signup = () => {
   const [newObject, setNewObject] = useState({});
 
-  const [addProfile, {error}] = useMutation(ADD_PROFILE);
+  const [addUser, {error}] = useMutation(ADD_USER);
 
   const setSearchParam = (e) => {
     setNewObject({...newObject, [e.target.name]: e.target.value})
@@ -15,7 +15,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      const { data } = await addProfile({
+      const { data } = await addUser({
         variables: { ...newObject }
       });
 
