@@ -7,6 +7,10 @@
     "watch": "node server.js",
     "seed": "node seeds/seed.js"
   },
+  "engines": {
+    "node": "16.13.x",
+    "npm": "8.19.x"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
