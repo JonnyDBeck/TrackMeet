@@ -26,7 +26,12 @@
     "url": "https://github.com/JonnyDBeck/TrackMeet/issues"
   },
   "homepage": "https://github.com/JonnyDBeck/TrackMeet#readme",
-    "devDependencies": {
+  "devDependencies": {
     "concurrently": "^7.6.0"
+  },
+  "dependencies": {
+    "apollo-server-express": "^3.11.1",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.1"
   }
 }

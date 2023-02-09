@@ -5,31 +5,31 @@
   ## Table of Contents
   - [Description](#description)
   - [Installation](#installation)
-  - [Usage](#usage)
   - [License](#license)
   - [Contribution](#contribution)
-  - [Testing](#testing)
+  - [Screenshot](#screenshot)
   - [Repository](#repository)
+  - [Heroku](#heroku)
   - [Question](#question)
 
   ## Description:
   TrackMeet is a webpage created with the purpose of giving users a very convienant way to track workouts. This allows users to know how much calories are being burned in a set amount of time. They will also be able to follow up on past workouts and see what was done on a certain day. This works both for desktop use as well as mobile, but of course will be more leaned as a mobile friendly app for on the go tracking.
   ## Installation:
-  
-  ## Usage:
-  
+  NPM, React, Apollo, JWT, Tailwind, GraphQL, Node, Express
   ## License:
   ISC
   ## Contribution:
-  
-  ## Testing: 
-
+  Mahmoud Khalil, William James, Jonathan Beck
+  ## Screenshot:
+  [TrackMeet Webpage Screenshot]()
   ## Repository: 
   [TrackMeet GitHub Repo URL](https://github.com/JonnyDBeck/TrackMeet.git)
+  ## Heroku: 
+  [TrackMeet Heroku URL](https://trackmeet.herokuapp.com/)
   ## Question
   - Github: [MHKhalil1](https://github.com/MHKhalil1)
   - Email: [khalilmahmoud2333@gmail.com](mailto:user@example.com)
-  - Github: []()
-  - Email: [](mailto:user@example.com)
-  - Github: []()
-  - Email: [](mailto:user@example.com)
+  - Github: [WilliamJ3795](https://github.com/WilliamJ3795)
+  - Email: [williamj3795@gmail.com](mailto:user@example.com)
+  - Github: [JonnyDBeck](https://github.com/JonnyDBeck)
+  - Email: [jonnydbeck@gmail.com](mailto:user@example.com)
