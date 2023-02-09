@@ -1,11 +1,11 @@
 import React,  { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { LOGIN } from "../utils/mutations";
+import { LOGIN_USER } from "../utils/mutations";
 
 const Login = () => {
   const [newObject, setNewObject] = useState({});
 
-  const [login, {error}] = useMutation(LOGIN);
+  const [login, {error}] = useMutation(LOGIN_USER);
 
   const setSearchParam = (e) => {
     setNewObject({...newObject, [e.target.name]: e.target.value})
